@@ -18,4 +18,8 @@ public class ShoppingCartServiceProxy {
     public JsonResponse<BasketDTO> getBasketById(Long id) {
         return shoppingCartClient.getBasketById(id);
     }
+
+    public JsonResponse<BasketDTO> updateBasket(BasketDTO basketDTO) {
+        return shoppingCartClient.updateBasket(basketDTO);
+    }
 }

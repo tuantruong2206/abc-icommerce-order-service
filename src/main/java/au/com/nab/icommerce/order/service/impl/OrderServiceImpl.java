@@ -58,6 +58,10 @@ public class OrderServiceImpl implements OrderService {
             //TODO should return specified error code
             throw new NABException(MessageCodeEnum.COMMON_ERROR_001, HttpStatus.BAD_REQUEST);
         }
+
+        basketDTO.setStatus(false);
+
+        JsonResponse<BasketDTO> basketResult = this.shoppingCartServiceProxy.updateBasket(basketDTO);
         Order order = this.orderRepository.save(Order.packingNewOrder(orderDTO));
         return this.orderMapper.toDto(order);
     }

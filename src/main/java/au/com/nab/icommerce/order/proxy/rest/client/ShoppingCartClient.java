@@ -17,4 +17,6 @@ public interface ShoppingCartClient {
     @RequestMapping(method = RequestMethod.GET, value = "/cart/basket/{id}", consumes = "application/json")
     JsonResponse<BasketDTO> getBasketById(@PathVariable (value = "id") Long id);
 
+    @RequestMapping(method = RequestMethod.PUT, value = "/cart/basket", consumes = "application/json")
+    JsonResponse<BasketDTO> updateBasket(BasketDTO basketDTO);
 }
